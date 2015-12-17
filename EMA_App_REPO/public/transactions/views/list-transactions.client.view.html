@@ -1,0 +1,15 @@
+<section data-ng-controller="TransactionsController" data-ng-init="find()">
+  <h1>Transactions</h1>
+  <ul>
+<li data-ng-repeat="transaction in transactions"> 
+	<a data-ng-href="#!/transactions/{{transaction._id}}" data-ng-bind="transaction.title"></a> <br>
+      <small data-ng-bind="transaction.created | date:'medium'"></small> 
+      <small>/</small> 
+      <small data-ng-bind="transaction.creator.fullName"></small>
+      <p data-ng-bind="transaction.content"></p>
+      <p data-ng-bind="transaction.deposit"></p>
+    </li>
+  </ul>
+  <div data-ng-hide="!transactions || transactions.length"> No transactions yet, why don't you <a href="/#!/transactions/
+create">create one</a>? </div>
+</section>

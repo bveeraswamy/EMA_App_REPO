@@ -1,0 +1,13 @@
+<section data-ng-controller="TransactionsController" data-ng-init="findOne()">
+  <h1 data-ng-bind="transaction.title"></h1>
+  <div data-ng-show="authentication.user._id == transaction.creator._id"> 
+  	<a href="/#!/transactions/{{transaction._id}}/edit">edit</a> 
+  		 <a href="#" data-ng-click="delete();">delete</a> </div>
+  <small> <em>Posted on</em> 
+  		<em data-ng-bind="transaction.created | date:'mediumDate'"></em> 
+  		<em>by</em> 
+  		<em data-ng-bind="transaction.fullName"></em> </small>
+  		{{transaction.creator.fullName}}
+  <p data-ng-bind="transaction.content"></p>
+  <p data-ng-bind="transaction.deposit"></p>
+</section>

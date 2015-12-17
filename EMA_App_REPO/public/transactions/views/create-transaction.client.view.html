@@ -1,0 +1,24 @@
+<section id = "new_transaction" data-ng-controller="TransactionsController">
+  <h1>New Transaction</h1>
+  <form data-ng-submit="create()" novalidate>
+    <div>
+      <label for="title">Title</label>
+      <div>
+        <input type="text" data-ng-model="title" id="title" placeholder="Title" required>
+      </div>
+      <div>
+        <input type="text" data-ng-model="deposit" id="title" placeholder="Title" required>
+      </div>
+    </div>
+    <div>
+      <label for="content">Content</label>
+      <div>
+        <textarea data-ng-model="content" id="content" cols="30" rows="10" placeholder="Content" style="padding-bottom:0 !important; margin-bottom:120px !important"></textarea>
+      </div>
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+    <div data-ng-show="error"> <strong data-ng-bind="error"></strong> </div>
+  </form>
+</section>
